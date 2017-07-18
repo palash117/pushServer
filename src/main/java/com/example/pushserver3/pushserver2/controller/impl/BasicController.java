@@ -46,7 +46,7 @@ public class BasicController implements IController {
 
     @RequestMapping("/pushEvent")
     @Override
-    public String pushEvent(BasicEvent event) {
+    public String pushEvent(@RequestBody  BasicEvent event) {
 
         try {
             return service.pushEvent(event);

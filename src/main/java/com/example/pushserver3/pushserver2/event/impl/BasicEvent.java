@@ -1,7 +1,7 @@
 package com.example.pushserver3.pushserver2.event.impl;
 
 import com.example.pushserver3.pushserver2.event.Eventable;
-import javafx.event.EventType;
+import com.example.pushserver3.pushserver2.event.type.EventDefinationType;
 
 /**
  * Created by palash on 12/7/17.
@@ -10,7 +10,7 @@ public class BasicEvent implements Eventable {
 
     public String destination;
 
-    public EventType type;
+    public EventDefinationType type;
 
     public String link;
 

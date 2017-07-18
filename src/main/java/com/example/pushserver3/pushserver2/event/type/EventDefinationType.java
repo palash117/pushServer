@@ -3,11 +3,11 @@ package com.example.pushserver3.pushserver2.event.type;
 /**
  * Created by palash on 17/7/17.
  */
-public enum EventType {
+public enum EventDefinationType {
     YOUTUBE("YOUTUBE",1);
     String type;
     int value;
-    EventType(String type, int value){
+    EventDefinationType(String type, int value){
         this.value = value;
         this.type = type;
     }

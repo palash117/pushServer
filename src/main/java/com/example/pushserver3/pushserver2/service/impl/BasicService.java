@@ -24,9 +24,10 @@ public class BasicService implements Servicable {
     @Override
     public String pushEvent(BasicEvent event) throws URISyntaxException {
 
+        ConsumerMap map = ConsumerMap.getInstance();
         RestTemplate restTemplate  = new RestTemplate();
 
-        String destination = event.getDestination();
+        String destination = map.get(event.getDestination());
 
         String response = RestUtil.postPushEvent(destination, event);
 

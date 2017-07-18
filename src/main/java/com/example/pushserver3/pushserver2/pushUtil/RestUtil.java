@@ -21,14 +21,25 @@ public class RestUtil {
 
         URI uri = null;
         try {
-            uri = new URI(ip + ":8080/pushEvent");
+            String protocol = "http";
+            String host = ip;
+            int port = 8080;
+            String path = "/pushEvent";
+            String auth = null;
+            String fragment = null;
+            uri = new URI(protocol, auth, host, port, path, null, fragment);
         } catch (URISyntaxException e) {
             e.printStackTrace();
             return  PushConstants.ERROR;
 
         }
 
-        response = restTemplate.getForObject( uri, String.class);
+        try {
+            response = restTemplate.postForObject(uri,event, String.class);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
 
         return response;
     }
