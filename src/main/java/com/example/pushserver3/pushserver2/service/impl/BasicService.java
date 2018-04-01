@@ -3,6 +3,7 @@ package com.example.pushserver3.pushserver2.service.impl;
 import com.example.pushserver3.pushserver2.Request.Consumer;
 import com.example.pushserver3.pushserver2.event.Eventable;
 import com.example.pushserver3.pushserver2.event.impl.BasicEvent;
+import com.example.pushserver3.pushserver2.event.impl.VolumeEvent;
 import com.example.pushserver3.pushserver2.pushUtil.RestUtil;
 import com.example.pushserver3.pushserver2.service.Servicable;
 import com.example.pushserver3.pushserver2.singleton.ConsumerMap;
@@ -54,6 +55,18 @@ public class BasicService implements Servicable {
         return map.getConsumerNames();
     }
 
-    
+    @Override
+    public String changeVolume(VolumeEvent event) {
+
+        ConsumerMap map = ConsumerMap.getInstance();
+        RestTemplate restTemplate  = new RestTemplate();
+
+        String destination = map.get(event.getDestination());
+
+        String response = RestUtil.postChangeVoluem(destination, event);
+
+        return response;
+    }
+
 
 }

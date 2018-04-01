@@ -4,6 +4,7 @@ import com.example.pushserver3.pushserver2.Request.Consumer;
 import com.example.pushserver3.pushserver2.controller.IController;
 import com.example.pushserver3.pushserver2.event.Eventable;
 import com.example.pushserver3.pushserver2.event.impl.BasicEvent;
+import com.example.pushserver3.pushserver2.event.impl.VolumeEvent;
 import com.example.pushserver3.pushserver2.service.Servicable;
 import com.example.pushserver3.pushserver2.singleton.ConsumerMap;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,5 +58,18 @@ public class BasicController implements IController {
         return "error";
     }
 
+    @RequestMapping("/pushEvent")
+    @Override
+    public String changeVolume(@RequestBody VolumeEvent event) {
+
+        try {
+            return service.changeVolume(event);
+        } catch (
+                Exception e) {
+            e.printStackTrace();
+        }
+
+        return "error";
+    }
 
 }
