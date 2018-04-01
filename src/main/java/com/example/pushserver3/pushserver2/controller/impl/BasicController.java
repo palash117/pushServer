@@ -35,6 +35,7 @@ public class BasicController implements IController {
     @Override
     public String addConsumer(@RequestBody  Consumer consumer) {
 
+        System.out.println("consumer added -controller");
         return service.addConsumer(consumer);
     }
 
@@ -63,6 +64,7 @@ public class BasicController implements IController {
     public String changeVolume(@RequestBody VolumeEvent event) {
 
         try {
+            System.out.println("volume changed" + event.volumePercentage);
             return service.changeVolume(event);
         } catch (
                 Exception e) {
