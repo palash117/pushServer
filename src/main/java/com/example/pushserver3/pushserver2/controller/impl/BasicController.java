@@ -58,7 +58,7 @@ public class BasicController implements IController {
         return "error";
     }
 
-    @RequestMapping("/pushEvent")
+    @RequestMapping("/changeVolume")
     @Override
     public String changeVolume(@RequestBody VolumeEvent event) {
 
