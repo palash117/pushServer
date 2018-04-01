@@ -31,4 +31,13 @@ public class VolumeEvent implements Eventable {
     public void setDestination(String destination) {
         this.destination = destination;
     }
+
+    @Override
+    public String toString() {
+        return "VolumeEvent{" +
+                "destination='" + destination + '\'' +
+                ", type=" + type +
+                ", volumePercentage=" + volumePercentage +
+                '}';
+    }
 }

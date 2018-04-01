@@ -64,7 +64,7 @@ public class BasicController implements IController {
     public String changeVolume(@RequestBody VolumeEvent event) {
 
         try {
-            System.out.println("volume changed" + event.volumePercentage);
+            System.out.println("volume changed" + event.toString());
             return service.changeVolume(event);
         } catch (
                 Exception e) {
