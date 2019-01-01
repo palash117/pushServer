@@ -4,7 +4,7 @@ package com.example.pushserver3.pushserver2.event.type;
  * Created by palash on 17/7/17.
  */
 public enum EventDefinationType {
-    YOUTUBE("YOUTUBE",1);
+    YOUTUBE("YOUTUBE",1),BUTTON_CLICK("BUTTON_CLICK", 2);;
     String type;
     int value;
     EventDefinationType(String type, int value){
